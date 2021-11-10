@@ -138,9 +138,10 @@
       <DependentUpon>202111030221469_create_table_Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Connect.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Seat.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
