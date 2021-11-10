@@ -141,6 +141,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Connect.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Seat.cs" />
     <Compile Include="Models\StringProcess.cs" />
