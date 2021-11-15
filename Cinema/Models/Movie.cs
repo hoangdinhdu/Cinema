@@ -14,6 +14,7 @@ namespace Cinema.Models
         public string MovieName { get; set; }
         public string MovieHour { get; set; }
         public float MovieMoney { get; set; }
+        public string MovieSeat { get; set; }
 
 
     }
