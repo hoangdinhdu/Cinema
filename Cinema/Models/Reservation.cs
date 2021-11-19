@@ -6,10 +6,11 @@ using System.Web;
 
 namespace Cinema.Models
 {
-    public class Account
+    public class Reservation
     {
         [Key]
-        public string UserName { get; set; }
-        public string PassWord { get; set; }
+        public string ReservationID { get; set; }
+        public string CustomerID { get; set; }
+        public string MovieID { get; set; }
     }
 }

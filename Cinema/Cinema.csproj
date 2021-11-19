@@ -137,12 +137,21 @@
     <Compile Include="Migrations\202111030221469_create_table_Customer.Designer.cs">
       <DependentUpon>202111030221469_create_table_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111171410197_create_table_hehe.cs" />
+    <Compile Include="Migrations\202111171410197_create_table_hehe.Designer.cs">
+      <DependentUpon>202111171410197_create_table_hehe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111190426406_Create_table_hehhe.cs" />
+    <Compile Include="Migrations\202111190426406_Create_table_hehhe.Designer.cs">
+      <DependentUpon>202111190426406_Create_table_hehhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Connect.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,6 +217,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111030221469_create_table_Customer.resx">
       <DependentUpon>202111030221469_create_table_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111171410197_create_table_hehe.resx">
+      <DependentUpon>202111171410197_create_table_hehe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111190426406_Create_table_hehhe.resx">
+      <DependentUpon>202111190426406_Create_table_hehhe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,6 +12,7 @@ namespace Cinema.Controllers
 {
     public class CustomersController : Controller
     {
+        StringProcess strPro = new StringProcess();
         private Connect db = new Connect();
 
         // GET: Customers
