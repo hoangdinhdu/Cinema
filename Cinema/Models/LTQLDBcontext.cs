@@ -5,19 +5,18 @@ using System.Linq;
 
 namespace Cinema.Models
 {
-    public partial class Connect : DbContext
+    public partial class LTQLDBcontext : DbContext
     {
-        public Connect()
-            : base("name=Connect")
+        public LTQLDBcontext()
+            : base("name=LTQLDBcontext")
         {
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Seat> Seats { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        //public virtual DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -26,7 +25,7 @@ namespace Cinema.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<Account>()
-                .Property(e => e.Password)
+                .Property(e => e.PassWord)
                 .IsFixedLength();
         }
     }

@@ -128,22 +128,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountAdminsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\AcountsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111030221469_create_table_Customer.cs" />
-    <Compile Include="Migrations\202111030221469_create_table_Customer.Designer.cs">
-      <DependentUpon>202111030221469_create_table_Customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111171410197_create_table_hehe.cs" />
-    <Compile Include="Migrations\202111171410197_create_table_hehe.Designer.cs">
-      <DependentUpon>202111171410197_create_table_hehe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111190426406_Create_table_hehhe.cs" />
-    <Compile Include="Migrations\202111190426406_Create_table_hehhe.Designer.cs">
-      <DependentUpon>202111190426406_Create_table_hehhe.cs</DependentUpon>
+    <Compile Include="Migrations\202111221346586_Create_Table_hehe.cs" />
+    <Compile Include="Migrations\202111221346586_Create_Table_hehe.Designer.cs">
+      <DependentUpon>202111221346586_Create_Table_hehe.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -152,7 +149,9 @@
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\StringProcess.cs" />
+    <Compile Include="Models\UserRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +165,22 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Accounts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -196,10 +211,14 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Accounts\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Views\Acounts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -215,14 +234,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111030221469_create_table_Customer.resx">
-      <DependentUpon>202111030221469_create_table_Customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111171410197_create_table_hehe.resx">
-      <DependentUpon>202111171410197_create_table_hehe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111190426406_Create_table_hehhe.resx">
-      <DependentUpon>202111190426406_Create_table_hehhe.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111221346586_Create_Table_hehe.resx">
+      <DependentUpon>202111221346586_Create_Table_hehe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

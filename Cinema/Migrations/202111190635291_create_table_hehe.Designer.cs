@@ -6,14 +6,14 @@ namespace Cinema.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Create_table_hehhe : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    public sealed partial class create_table_hehe : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_table_hehhe));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_hehe));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111190426406_Create_table_hehhe"; }
+            get { return "202111190635291_create_table_hehe"; }
         }
         
         string IMigrationMetadata.Source
