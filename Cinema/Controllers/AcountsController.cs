@@ -50,11 +50,11 @@ namespace Cinema.Controllers
         {
             if (CheckSession() == 1)
             {
-                return RedirectToAction("Index", "HomeAdmin", new { Area = "Admins" });
+                return RedirectToAction("Index", "Movies", new { Area = "Admin" });
             }
             else if (CheckSession() == 2)
             {
-                return RedirectToAction("Index", "ProductsClient", new { Area = "Client" });
+                return RedirectToAction("Index", "Home", new { Area = " " });
             }
             ViewBag.ReturnUrl = returnUrl;
             return View();
@@ -99,12 +99,12 @@ namespace Cinema.Controllers
             {
                 if (CheckSession() == 1)
                 {
-                    return RedirectToAction("Index", "HomeAdmin", new { Area = "Admins" });
+                    return RedirectToAction("Index", "Movies", new { Area = "Admin" });
                 }
                 else if (CheckSession() == 2)
 
                 {
-                    return RedirectToAction("Index", "ProductsClient", new { Area = "Client" });
+                    return RedirectToAction("Index", "Home", new { Area = "" });
                 }
 
             }
@@ -145,7 +145,7 @@ namespace Cinema.Controllers
                         {
                             return 1;
                         }
-                        else if (role.ToString() == "client")
+                        else if (role.ToString() == "kh")
                         {
                             return 2;
                         }

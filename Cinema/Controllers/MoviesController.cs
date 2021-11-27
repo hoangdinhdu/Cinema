@@ -8,19 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using Cinema.Models;
 
-namespace Cinema.Areas.Admin.Controllers
+namespace Cinema.Controllers
 {
     public class MoviesController : Controller
     {
         private Connect db = new Connect();
 
-        // GET: Admin/Movies
+        // GET: Movies
         public ActionResult Index()
         {
             return View(db.Movies.ToList());
         }
 
-        // GET: Admin/Movies/Details/5
+        // GET: Movies/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace Cinema.Areas.Admin.Controllers
             return View(movie);
         }
 
-        // GET: Admin/Movies/Create
+        // GET: Movies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Movies/Create
+        // POST: Movies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace Cinema.Areas.Admin.Controllers
             return View(movie);
         }
 
-        // GET: Admin/Movies/Edit/5
+        // GET: Movies/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace Cinema.Areas.Admin.Controllers
             return View(movie);
         }
 
-        // POST: Admin/Movies/Edit/5
+        // POST: Movies/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace Cinema.Areas.Admin.Controllers
             return View(movie);
         }
 
-        // GET: Admin/Movies/Delete/5
+        // GET: Movies/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace Cinema.Areas.Admin.Controllers
             return View(movie);
         }
 
-        // POST: Admin/Movies/Delete/5
+        // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

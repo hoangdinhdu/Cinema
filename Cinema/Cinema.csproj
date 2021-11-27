@@ -130,11 +130,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountAdminsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
-    <Compile Include="Areas\Admin\Controllers\MoviesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoviesAdminController.cs" />
+    <Compile Include="Areas\Admin\RolesController.cs" />
     <Compile Include="Controllers\AcountsController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,21 +166,18 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Accounts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Accounts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Accounts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Accounts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Accounts\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Movies\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Movies\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Movies\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Movies\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Movies\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\AccountAdmins\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MoviesAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MoviesAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MoviesAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MoviesAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MoviesAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -203,21 +200,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Customers\Create.cshtml" />
-    <Content Include="Views\Customers\Delete.cshtml" />
-    <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Customers\Edit.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Accounts\Login.cshtml" />
     <Content Include="Views\Accounts\Register.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Accounts\" />
     <Folder Include="Views\Acounts\" />
   </ItemGroup>
   <ItemGroup>

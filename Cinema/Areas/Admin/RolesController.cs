@@ -8,110 +8,109 @@ using System.Web;
 using System.Web.Mvc;
 using Cinema.Models;
 
-namespace Cinema.Controllers
+namespace Cinema.Areas.Admin
 {
-    public class CustomersController : Controller
+    public class RolesController : Controller
     {
-        StringProcess strPro = new StringProcess();
         private Connect db = new Connect();
 
-        // GET: Customers
+        // GET: Admin/Roles
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            return View(db.Roles.ToList());
         }
 
-        // GET: Customers/Details/5
+        // GET: Admin/Roles/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(role);
         }
 
-        // GET: Customers/Create
+        // GET: Admin/Roles/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Customers/Create
+        // POST: Admin/Roles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail")] Customer customer)
+        public ActionResult Create([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.Roles.Add(role);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(customer);
+            return View(role);
         }
 
-        // GET: Customers/Edit/5
+        // GET: Admin/Roles/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(role);
         }
 
-        // POST: Customers/Edit/5
+        // POST: Admin/Roles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail")] Customer customer)
+        public ActionResult Edit([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(role).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(customer);
+            return View(role);
         }
 
-        // GET: Customers/Delete/5
+        // GET: Admin/Roles/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(role);
         }
 
-        // POST: Customers/Delete/5
+        // POST: Admin/Roles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
+            Role role = db.Roles.Find(id);
+            db.Roles.Remove(role);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
