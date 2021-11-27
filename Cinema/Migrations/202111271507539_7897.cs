@@ -3,7 +3,7 @@ namespace Cinema.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Create_Table_hehe : DbMigration
+    public partial class _7897 : DbMigration
     {
         public override void Up()
         {
@@ -31,16 +31,28 @@ namespace Cinema.Migrations
                 .PrimaryKey(t => t.CustomerID);
             
             CreateTable(
+                "dbo.Giochieux",
+                c => new
+                    {
+                        IDGioChieu = c.String(nullable: false, maxLength: 128),
+                        ThoiGianChieu = c.String(),
+                    })
+                .PrimaryKey(t => t.IDGioChieu);
+            
+            CreateTable(
                 "dbo.Movies",
                 c => new
                     {
                         MovieID = c.String(nullable: false, maxLength: 128),
                         MovieName = c.String(),
-                        MovieHour = c.String(),
+                        IDGioChieu = c.String(maxLength: 128),
                         MovieMoney = c.Single(nullable: false),
                         MovieSeat = c.String(),
+                        ProductImageName = c.String(),
                     })
-                .PrimaryKey(t => t.MovieID);
+                .PrimaryKey(t => t.MovieID)
+                .ForeignKey("dbo.Giochieux", t => t.IDGioChieu)
+                .Index(t => t.IDGioChieu);
             
             CreateTable(
                 "dbo.Reservations",
@@ -65,9 +77,12 @@ namespace Cinema.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.Movies", "IDGioChieu", "dbo.Giochieux");
+            DropIndex("dbo.Movies", new[] { "IDGioChieu" });
             DropTable("dbo.Roles");
             DropTable("dbo.Reservations");
             DropTable("dbo.Movies");
+            DropTable("dbo.Giochieux");
             DropTable("dbo.Customer");
             DropTable("dbo.Accounts");
         }

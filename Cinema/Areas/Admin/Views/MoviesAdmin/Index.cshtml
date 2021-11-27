@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -10,13 +10,13 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MovieName)
+            @Html.DisplayNameFor(model => model.Giochieus.ThoiGianChieu)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MovieHour)
+            @Html.DisplayNameFor(model => model.MovieName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MovieMoney)
@@ -24,29 +24,46 @@
         <th>
             @Html.DisplayNameFor(model => model.MovieSeat)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImageName)
+        </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieHour)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieMoney)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieSeat)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MovieID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MovieID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MovieID })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+            <div class="video-thumb  light ">
+                <a href="" class="video-image">
+                    <img src="@item.ProductImageName" alt="Future Hell">
+
+                    <!-- end circle-rate -->
+                    <div class="hd">
+                       @item.MovieName
+                    </div>
+                    <!-- end hd -->
+                </a>
+                <div class="video-content">
+
+                    <div class="age">
+                        Giờ Chiếu : @item.Giochieus.ThoiGianChieu
+                    </div>
+                    <!-- end age -->
+                    <small class="year">
+                        Số Ghế : @item.MovieSeat
+                    </small>
+                    <ul class="tags">
+                        <li>Tiền Vé : @item.MovieMoney</li>
+                    </ul>
+                    <h3 class="name"><a href="~/Admin/MoviesAdmin/Details/@item.MovieID" data-text="Future Hell"> @item.MovieName </a></h3>
+                </div>
+                <!-- end video-content -->
+            </div>
+            <!-- end video-thumb -->
+        </div>
+    }
+
+@*</table>*@

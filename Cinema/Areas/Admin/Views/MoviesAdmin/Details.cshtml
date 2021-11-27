@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Details</h2>
@@ -12,19 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Giochieus.ThoiGianChieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giochieus.ThoiGianChieu)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.MovieName)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.MovieName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MovieHour)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MovieHour)
         </dd>
 
         <dt>
@@ -41,6 +41,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.MovieSeat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductImageName)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ProductImageName)" alt="Alternate Text" />
         </dd>
 
     </dl>

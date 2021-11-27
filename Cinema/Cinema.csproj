@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountAdminsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GiochieuxAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\MoviesAdminController.cs" />
     <Compile Include="Areas\Admin\RolesController.cs" />
     <Compile Include="Controllers\AcountsController.cs" />
@@ -138,15 +139,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111221346586_Create_Table_hehe.cs" />
-    <Compile Include="Migrations\202111221346586_Create_Table_hehe.Designer.cs">
-      <DependentUpon>202111221346586_Create_Table_hehe.cs</DependentUpon>
+    <Compile Include="Migrations\202111271507539_7897.cs" />
+    <Compile Include="Migrations\202111271507539_7897.Designer.cs">
+      <DependentUpon>202111271507539_7897.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Connect.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Encrytion.cs" />
+    <Compile Include="Models\Giochieu.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Role.cs" />
@@ -173,6 +175,11 @@
     <Content Include="Areas\Admin\Views\Roles\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Roles\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GiochieuxAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\GiochieuxAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\GiochieuxAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\GiochieuxAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GiochieuxAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\MoviesAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\MoviesAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\MoviesAdmin\Details.cshtml" />
@@ -210,6 +217,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Accounts\" />
+    <Folder Include="Images\" />
     <Folder Include="Views\Acounts\" />
   </ItemGroup>
   <ItemGroup>
@@ -226,8 +234,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111221346586_Create_Table_hehe.resx">
-      <DependentUpon>202111221346586_Create_Table_hehe.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111271507539_7897.resx">
+      <DependentUpon>202111271507539_7897.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

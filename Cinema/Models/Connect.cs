@@ -17,6 +17,7 @@ namespace Cinema.Models
         public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Giochieu> Giochieus { get; set; }
         //public virtual DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

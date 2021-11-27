@@ -7,13 +7,13 @@ namespace Cinema.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Create_Table_hehe : IMigrationMetadata
+    public sealed partial class _7897 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_hehe));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_7897));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111221346586_Create_Table_hehe"; }
+            get { return "202111271507539_7897"; }
         }
         
         string IMigrationMetadata.Source
