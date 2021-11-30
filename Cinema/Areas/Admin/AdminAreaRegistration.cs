@@ -7,6 +7,9 @@ namespace Cinema.Areas.Admin
         public override string AreaName 
         {
             get 
+
+
+
             {
                 return "Admin";
             }

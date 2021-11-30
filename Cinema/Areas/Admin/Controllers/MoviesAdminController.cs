@@ -13,6 +13,7 @@ namespace Cinema.Areas.Admin.Controllers
 {
     public class MoviesAdminController : Controller
     {
+       // StringProcess strPro = new StringProcess();
         private Connect db = new Connect();
 
         // GET: Admin/MoviesAdmin

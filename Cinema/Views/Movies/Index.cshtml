@@ -10,43 +10,43 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieHour)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieMoney)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MovieSeat)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieHour)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieMoney)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieSeat)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MovieID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MovieID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MovieID })
-        </td>
-    </tr>
-}
 
-</table>
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+
+            <div class="video-thumb  light ">
+                <a href="" class="video-image" style="">
+                    <img src="@item.ProductImageName" alt="Future Hell" style="width: 100%; height: 400px; object-fit: cover ;margin:16px 0">
+
+                    <!-- end circle-rate -->
+                    <div class="hd" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;">
+                        @item.MovieName
+                    </div>
+                    <!-- end hd -->
+                </a>
+                <div class="video-content">
+
+                    <div class="age">
+                        Giờ Chiếu : @item.Giochieus.ThoiGianChieu
+                    </div>
+                    <!-- end age -->
+                    <small class="year">
+                        Số Ghế : @item.MovieSeat
+                    </small>
+                    <div class="tags">
+                        Tiền Vé : @item.MovieMoney
+                    </div>
+                    <h3 class="name"><a href="~/Movies/Details/@item.MovieID" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;"> @item.MovieName </a></h3>
+                </div>
+                <!-- end video-content -->
+            </div>
+            <div>
+                <a href="Movies/Details/@item.MovieID" class=""> </a>
+            </div>
+            <!-- end video-thumb -->
+        </div>
+    }
+
+
