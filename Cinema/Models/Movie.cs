@@ -22,6 +22,7 @@ namespace Cinema.Models
         public float MovieMoney { get; set; }
         [Display(Name = "Chỗ ngồi")]
         public string MovieSeat { get; set; }
+        [Display(Name = "Chọn ảnh")]
         public string ProductImageName { get; set; }
         [NotMapped]
         public HttpPostedFileBase ProductImgFile { get; set; }

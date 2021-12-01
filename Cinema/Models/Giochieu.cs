@@ -9,6 +9,7 @@ namespace Cinema.Models
     public class Giochieu
     {
         [Key]
+        [Display(Name =("Giờ chiếu"))]
         public string IDGioChieu { get; set; }
         public string ThoiGianChieu { get; set; }
 
