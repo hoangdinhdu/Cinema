@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Mua vé</h2>
 
 <div>
-    <h4>Movie</h4>
+    @*<h4>Movie</h4>*@
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,10 +42,27 @@
         <dd>
             @Html.DisplayFor(model => model.MovieSeat)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductImageName)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ProductImageName)" alt="Alternate Text" />
+        </dd>
 
     </dl>
 </div>
 <p>
-    
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-warning">Mua Vé</button>
+
+    <button type="button" class="btn btn-warning">@Html.ActionLink("Huỷ", "Index")</button>
+
+
 </p>
+
+
+@*<p>
+
+        @Html.ActionLink("Trở lại trang trước", "Index")
+    </p>
+*@

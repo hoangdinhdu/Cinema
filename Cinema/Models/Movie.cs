@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;  
 using System.Linq;
 using System.Web;
 
@@ -22,7 +22,7 @@ namespace Cinema.Models
         public float MovieMoney { get; set; }
         [Display(Name = "Chỗ ngồi")]
         public string MovieSeat { get; set; }
-        [Display(Name = "Chọn ảnh")]
+        [Display(Name = "Ảnh minh hoạ")]
         public string ProductImageName { get; set; }
         [NotMapped]
         public HttpPostedFileBase ProductImgFile { get; set; }
