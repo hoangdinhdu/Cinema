@@ -18,13 +18,17 @@ namespace Cinema.Models
         public string CustomerName { get; set; }
        
         [Display(Name = "Số điện thoại")]
-        public int CustomerPhone { get; set; }
+        public String CustomerPhone { get; set; }
         [StringLength(50)]
         [Display(Name = "Địa chỉ")]
         public string CustomerAddress { get; set; }
         [StringLength(50)]
         [Display(Name = "Email")]
         public string CustomerEmail { get; set; }
+        public string MovieID { get; set; }
+        [ForeignKey("MovieID")]
+      
+        public virtual Movie Movie { get; set; }
 
 
     }

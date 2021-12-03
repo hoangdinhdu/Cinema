@@ -26,6 +26,7 @@ namespace Cinema.Models
         public string ProductImageName { get; set; }
         [NotMapped]
         public HttpPostedFileBase ProductImgFile { get; set; }
+        public ICollection<Customer> Customers { get; set; }
 
     }
 }

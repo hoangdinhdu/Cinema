@@ -1,5 +1,6 @@
 ﻿@model Cinema.Models.Movie
 
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,10 +12,16 @@
     @*<h4>Movie</h4>*@
     <hr />
     <dl class="dl-horizontal">
+
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ProductImageName)" alt="Alternate Text" />
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.MovieName)
         </dt>
-
+          
         <dd>
             @Html.DisplayFor(model => model.MovieName)
         </dd>
@@ -42,15 +49,11 @@
         <dd>
             @Html.DisplayFor(model => model.MovieSeat)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductImageName)
-        </dt>
 
-        <dd>
-            <img src="@Html.DisplayFor(model => model.ProductImageName)" alt="Alternate Text" />
-        </dd>
 
     </dl>
+
+
 </div>
 <p>
     <button type="button" class="btn btn-warning">Mua Vé</button>
