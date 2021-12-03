@@ -15,9 +15,23 @@ namespace Cinema.Controllers
         private Connect db = new Connect();
 
         // GET: Movies
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Movies.ToList());
+            var links = from l in db.Movies // lấy toàn bộ liên kết
+                        select l;
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                var linksearch = links.Where(s => s.MovieName.Contains(searchString)); //lọc theo chuỗi tìm kiếm
+                return View(linksearch);
+            }
+            else
+            {
+                ViewBag.ThongBao = "Không tìm thấy sản phẩm nào phù hợp.";
+            }
+
+
+            return View(links);
+          
         }
 
         // GET: Movies/Details/5

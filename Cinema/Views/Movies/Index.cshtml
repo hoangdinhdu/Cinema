@@ -8,45 +8,60 @@
 <h2>Danh sách phim</h2>
 
 @* <p>
-    @Html.ActionLink("Thêm phim", "Create")
-</p>*@
+        @Html.ActionLink("Thêm phim", "Create")
+    </p>*@
+@using (Html.BeginForm())
+{
+
+    <p class="d-flex">
+        <input id="SearchString" name="SearchString" type="text" value="" placeholder="Nhập sản phẩm cần tìm" class="rounded">
+        <input type="submit" value="Tìm kiếm" class="text-white text-white btn btn-round btn-danger text-white" />
+
+    </p>
+
+    @*<div class="d-flex align-items-center">
+            <input id="SearchString" name="SearchString" type="text" value="" placeholder="Nhập sản phẩm cần tìm">
+            <input type="submit" value="Tìm kiếm" class="text-white" style="padding: 10px 26px; " />
+        </div>*@
+
+}
 
 
-    @foreach (var item in Model)
-    {
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+@foreach (var item in Model)
+{
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
 
-            <div class="video-thumb  light ">
-                <a href="" class="video-image" style="">
-                    <img src="@item.ProductImageName" alt="Future Hell" style="width: 100%; height: 400px; object-fit: cover ;margin:16px 0">
+        <div class="video-thumb  light ">
+            <a href="" class="video-image" style="">
+                <img src="@item.ProductImageName" alt="Future Hell" style="width: 100%; height: 400px; object-fit: cover ;margin:16px 0">
 
-                    <!-- end circle-rate -->
-                    <div class="hd" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;">
-                        @item.MovieName
-                    </div>
-                    <!-- end hd -->
-                </a>
-                <div class="video-content">
-
-                    <div class="age">
-                        Giờ Chiếu : @item.Giochieus.ThoiGianChieu
-                    </div>
-                    <!-- end age -->
-                    <small class="year">
-                        Số Ghế : @item.MovieSeat
-                    </small>
-                    <div class="tags">
-                        Tiền Vé : @item.MovieMoney
-                    </div>
-                    <h3 class="btn btn-warning" style="background-color: darkorange;"><a href="~/Customers/Create/@item.MovieID" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;"> Đặt vé </a></h3>
+                <!-- end circle-rate -->
+                <div class="hd" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;">
+                    @item.MovieName
                 </div>
-                <!-- end video-content -->
+                <!-- end hd -->
+            </a>
+            <div class="video-content">
+
+                <div class="age">
+                    Giờ Chiếu : @item.Giochieus.ThoiGianChieu
+                </div>
+                <!-- end age -->
+                <small class="year">
+                    Số Ghế : @item.MovieSeat
+                </small>
+                <div class="tags">
+                    Tiền Vé : @item.MovieMoney
+                </div>
+                <h3 class="btn btn-warning" style="background-color: darkorange;"><a href="~/Customers/Create/@item.MovieID" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;"> Đặt vé </a></h3>
             </div>
-            <div>
-                <a href="Movies/Details/@item.MovieID" class=""> </a>
-            </div>
-            <!-- end video-thumb -->
+            <!-- end video-content -->
         </div>
-    }
+        <div>
+            <a href="Movies/Details/@item.MovieID" class=""> </a>
+        </div>
+        <!-- end video-thumb -->
+    </div>
+}
 
 
