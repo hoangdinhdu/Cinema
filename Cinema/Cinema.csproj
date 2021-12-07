@@ -135,6 +135,7 @@
     <Compile Include="Areas\Admin\RolesController.cs" />
     <Compile Include="Controllers\AcountsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\HinhThucThanhToansController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -152,12 +153,17 @@
     <Compile Include="Migrations\202112030236090_1.Designer.cs">
       <DependentUpon>202112030236090_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112070351223_2.cs" />
+    <Compile Include="Migrations\202112070351223_2.Designer.cs">
+      <DependentUpon>202112070351223_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Connect.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Giochieu.cs" />
+    <Compile Include="Models\HinhThucThanhToan.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Role.cs" />
@@ -224,6 +230,11 @@
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\HinhThucThanhToans\Create.cshtml" />
+    <Content Include="Views\HinhThucThanhToans\Delete.cshtml" />
+    <Content Include="Views\HinhThucThanhToans\Details.cshtml" />
+    <Content Include="Views\HinhThucThanhToans\Edit.cshtml" />
+    <Content Include="Views\HinhThucThanhToans\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112030236090_1.resx">
       <DependentUpon>202112030236090_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112070351223_2.resx">
+      <DependentUpon>202112070351223_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,9 +11,11 @@ namespace Cinema.Models
     {
         [Required]
         [Key]
+        [Display(Name ="Tài khoản")]
         public string UserName { get; set; }
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
         [Compare("Password")]
         [DataType(DataType.Password)]

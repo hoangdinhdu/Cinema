@@ -30,5 +30,7 @@ namespace Cinema.Models
                 .Property(e => e.Password)
                 .IsFixedLength();
         }
+
+        public System.Data.Entity.DbSet<Cinema.Models.HinhThucThanhToan> HinhThucThanhToans { get; set; }
     }
 }

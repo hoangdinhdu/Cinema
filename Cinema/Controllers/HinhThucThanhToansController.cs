@@ -10,117 +10,107 @@ using Cinema.Models;
 
 namespace Cinema.Controllers
 {
-    public class CustomersController : Controller
+    public class HinhThucThanhToansController : Controller
     {
-        StringProcess strPro = new StringProcess();
         private Connect db = new Connect();
 
-        // GET: Customers
+        // GET: HinhThucThanhToans
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.Movie);
-            return View(customers.ToList());
+            return View(db.HinhThucThanhToans.ToList());
         }
 
-        // GET: Customers/Details/5
+        // GET: HinhThucThanhToans/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            HinhThucThanhToan hinhThucThanhToan = db.HinhThucThanhToans.Find(id);
+            if (hinhThucThanhToan == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(hinhThucThanhToan);
         }
 
-        // GET: Customers/Create
+        // GET: HinhThucThanhToans/Create
         public ActionResult Create()
         {
-            var KHID = db.Customers.OrderByDescending(m => m.CustomerID).FirstOrDefault().CustomerID;
-            var newID = strPro.Genneratekey(KHID);
-            ViewBag.NewKHID = newID;
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName");
-            ViewBag.hinhthucID = new SelectList(db.HinhThucThanhToans, "hinhthucID", "LoaiHinhThuc");
-            return View();   
+            return View();
         }
 
-        // POST: Customers/Create
+        // POST: HinhThucThanhToans/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail,MovieID")] Customer customer)
+        public ActionResult Create([Bind(Include = "hinhthucID,LoaiHinhThuc")] HinhThucThanhToan hinhThucThanhToan)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.HinhThucThanhToans.Add(hinhThucThanhToan);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", customer.MovieID);
-            return View(customer);
+            return View(hinhThucThanhToan);
         }
 
-        // GET: Customers/Edit/5
+        // GET: HinhThucThanhToans/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            HinhThucThanhToan hinhThucThanhToan = db.HinhThucThanhToans.Find(id);
+            if (hinhThucThanhToan == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", customer.MovieID);
-            return View(customer);
+            return View(hinhThucThanhToan);
         }
 
-        // POST: Customers/Edit/5
+        // POST: HinhThucThanhToans/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail,MovieID")] Customer customer)
+        public ActionResult Edit([Bind(Include = "hinhthucID,LoaiHinhThuc")] HinhThucThanhToan hinhThucThanhToan)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(hinhThucThanhToan).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", customer.MovieID);
-            return View(customer);
+            return View(hinhThucThanhToan);
         }
 
-        // GET: Customers/Delete/5
+        // GET: HinhThucThanhToans/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            HinhThucThanhToan hinhThucThanhToan = db.HinhThucThanhToans.Find(id);
+            if (hinhThucThanhToan == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(hinhThucThanhToan);
         }
 
-        // POST: Customers/Delete/5
+        // POST: HinhThucThanhToans/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
+            HinhThucThanhToan hinhThucThanhToan = db.HinhThucThanhToans.Find(id);
+            db.HinhThucThanhToans.Remove(hinhThucThanhToan);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

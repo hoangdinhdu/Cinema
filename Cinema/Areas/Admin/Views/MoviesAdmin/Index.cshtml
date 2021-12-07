@@ -59,12 +59,13 @@
                 <div class="tags">
                     Tiền Vé : @item.MovieMoney
                 </div>
-                <h3 class="btn btn-warning"style="background-color: darkorange;"><a href="~/Admin/MoviesAdmin/Details/@item.MovieID"style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;"> @item.MovieName </a></h3>
+                <h3 class="btn btn-warning" style="background-color: darkorange;"><a href="~/Admin/MoviesAdmin/Details/@item.MovieID" style=" font-size: 1.9rem; line-height: 2.2rem; /* height: 3.2rem; */ word-wrap: break-word; text-overflow: ellipsis; overflow: hidden; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;"> @item.MovieName </a></h3>
+                <a href="~/Admin/MoviesAdmin/Delete/@item.MovieID" class=""> Xoá</a>
             </div>
             <!-- end video-content -->
         </div>
         <div>
-            <a href="~/Admin/MoviesAdmin/Delete/@item.MovieID" class=""> Xoá</a>
+            
         </div>
         <!-- end video-thumb -->
     </div>
