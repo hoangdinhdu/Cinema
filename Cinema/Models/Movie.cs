@@ -19,7 +19,7 @@ namespace Cinema.Models
         [ForeignKey("IDGioChieu")]
         public virtual Giochieu Giochieus { get; set; }
         [Display(Name = "Tiền vé")]
-        public float MovieMoney { get; set; }
+        public String MovieMoney { get; set; }
         [Display(Name = "Chỗ ngồi")]
         public string MovieSeat { get; set; }
         [Display(Name = "Ảnh minh hoạ")]

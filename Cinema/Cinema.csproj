@@ -157,6 +157,10 @@
     <Compile Include="Migrations\202112070351223_2.Designer.cs">
       <DependentUpon>202112070351223_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112100348406_5.cs" />
+    <Compile Include="Migrations\202112100348406_5.Designer.cs">
+      <DependentUpon>202112100348406_5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Connect.cs" />
@@ -241,7 +245,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Accounts\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Acounts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -268,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112070351223_2.resx">
       <DependentUpon>202112070351223_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112100348406_5.resx">
+      <DependentUpon>202112100348406_5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

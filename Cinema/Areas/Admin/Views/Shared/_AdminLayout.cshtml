@@ -21,8 +21,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Phim", "Index", "MoviesAdmin")</li>                  
-                    <li>@Html.ActionLink("Giờ chiếu", "Index", "GiochieuxAdmin")</li>                  
+                    <li>@Html.ActionLink("Phim", "Index", "MoviesAdmin")</li>
+                    <li>@Html.ActionLink("Giờ chiếu", "Index", "GiochieuxAdmin")</li>
+                    @*<li>@Html.ActionLink("Thông tin khách hàng", "Index", "C", new { Area = "" }, null)</li>*@
+                    <li>@Html.ActionLink("Thêm Admin", "Register", "Accounts", new { Area = "" }, null)</li>
                     <li>@Html.ActionLink("Đăng Xuất", "Logout", "Accounts", new { Area = "" }, null)</li>
                 </ul>
             </div>
@@ -30,7 +32,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-       
+
         <hr />
 
     </div>

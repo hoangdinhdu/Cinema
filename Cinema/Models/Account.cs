@@ -19,8 +19,10 @@ namespace Cinema.Models
         public string Password { get; set; }
         [Compare("Password")]
         [DataType(DataType.Password)]
+        [Display (Name ="Nhập lại mật khẩu")]
         public string ConfirmPassword { get; set; }
         [StringLength(10)]
+
         public string RoleID { get; set; }
         
     }

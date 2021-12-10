@@ -53,7 +53,7 @@ namespace Cinema.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail,MovieID")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail,MovieID,")] Customer customer)
         {
             if (ModelState.IsValid)
             {

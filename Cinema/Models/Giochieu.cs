@@ -11,6 +11,7 @@ namespace Cinema.Models
         [Key]
         [Display(Name =("Giờ chiếu"))]
         public string IDGioChieu { get; set; }
+        [Display(Name ="Thời gian chiếu")]
         public string ThoiGianChieu { get; set; }
 
         public ICollection<Movie> Movies { get; set; }
