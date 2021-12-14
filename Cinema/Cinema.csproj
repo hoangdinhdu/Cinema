@@ -239,6 +239,7 @@
     <Content Include="Views\HinhThucThanhToans\Details.cshtml" />
     <Content Include="Views\HinhThucThanhToans\Edit.cshtml" />
     <Content Include="Views\HinhThucThanhToans\Index.cshtml" />
+    <Content Include="Views\Accounts\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
