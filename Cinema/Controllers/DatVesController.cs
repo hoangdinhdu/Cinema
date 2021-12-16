@@ -10,117 +10,112 @@ using Cinema.Models;
 
 namespace Cinema.Controllers
 {
-    public class CustomersController : Controller
+    public class DatVesController : Controller
     {
-        StringProcess strPro = new StringProcess();
         private Connect db = new Connect();
 
-        // GET: Customers
+        // GET: DatVes
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.Movie);
-            return View(customers.ToList());
+            var datVes = db.DatVes.Include(d => d.Movie);
+            return View(datVes.ToList());
         }
 
-        // GET: Customers/Details/5
-        public ActionResult Details(string id)
+        // GET: DatVes/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            DatVe datVe = db.DatVes.Find(id);
+            if (datVe == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(datVe);
         }
 
-        // GET: Customers/Create
+        // GET: DatVes/Create
         public ActionResult Create()
         {
-            var KHID = db.Customers.OrderByDescending(m => m.CustomerID).FirstOrDefault().CustomerID;
-            var newID = strPro.Genneratekey(KHID);
-            ViewBag.NewKHID = newID;
             ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName");
-            //ViewBag.hinhthucID = new SelectList(db.HinhThucThanhToans, "hinhthucID", "LoaiHinhThuc");
-            return View();   
+            return View();
         }
 
-        // POST: Customers/Create
+        // POST: DatVes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail,MovieID,")] Customer customer)
+        public ActionResult Create([Bind(Include = "ID,UserName,MovieID")] DatVe datVe)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.DatVes.Add(datVe);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", customer.MovieID);
-            return View(customer);
+            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", datVe.MovieID);
+            return View(datVe);
         }
 
-        // GET: Customers/Edit/5
-        public ActionResult Edit(string id)
+        // GET: DatVes/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            DatVe datVe = db.DatVes.Find(id);
+            if (datVe == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", customer.MovieID);
-            return View(customer);
+            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", datVe.MovieID);
+            return View(datVe);
         }
 
-        // POST: Customers/Edit/5
+        // POST: DatVes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,CustomerName,CustomerPhone,CustomerAddress,CustomerEmail,MovieID")] Customer customer)
+        public ActionResult Edit([Bind(Include = "ID,UserName,MovieID")] DatVe datVe)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(datVe).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", customer.MovieID);
-            return View(customer);
+            ViewBag.MovieID = new SelectList(db.Movies, "MovieID", "MovieName", datVe.MovieID);
+            return View(datVe);
         }
 
-        // GET: Customers/Delete/5
-        public ActionResult Delete(string id)
+        // GET: DatVes/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            DatVe datVe = db.DatVes.Find(id);
+            if (datVe == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(datVe);
         }
 
-        // POST: Customers/Delete/5
+        // POST: DatVes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
+            DatVe datVe = db.DatVes.Find(id);
+            db.DatVes.Remove(datVe);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

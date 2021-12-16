@@ -15,9 +15,10 @@ namespace Cinema.Models
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
-        public virtual DbSet<Reservation> Reservations { get; set; }
+        //public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Giochieu> Giochieus { get; set; }
+        public virtual DbSet<DatVe> DatVes { get; set; }
         //public virtual DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -31,6 +32,6 @@ namespace Cinema.Models
                 .IsFixedLength();
         }
 
-        public System.Data.Entity.DbSet<Cinema.Models.HinhThucThanhToan> HinhThucThanhToans { get; set; }
+        //public System.Data.Entity.DbSet<Cinema.Models.HinhThucThanhToan> HinhThucThanhToans { get; set; }
     }
 }

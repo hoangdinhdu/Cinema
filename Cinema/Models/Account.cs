@@ -22,8 +22,10 @@ namespace Cinema.Models
         [Display (Name ="Nhập lại mật khẩu")]
         public string ConfirmPassword { get; set; }
         [StringLength(10)]
-
         public string RoleID { get; set; }
-        
+        [Display(Name ="Họ và Tên")]
+        public string Hoten { get; set; }
+        [Display(Name ="Số Điện Thoại" )]
+        public string SDT { get; set; }
     }
 }

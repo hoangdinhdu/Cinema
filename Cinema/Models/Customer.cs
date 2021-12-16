@@ -29,10 +29,10 @@ namespace Cinema.Models
         [ForeignKey("MovieID")]
       
         public virtual Movie Movie { get; set; }
-        public string hinhthucID { get; set; }
-        [ForeignKey("hinhthucID")]
+        //public string hinhthucID { get; set; }
+        //[ForeignKey("hinhthucID")]
 
-        public virtual HinhThucThanhToan HinhThucThanhToan { get; set; }
+        //public virtual HinhThucThanhToan HinhThucThanhToan { get; set; }
 
 
 

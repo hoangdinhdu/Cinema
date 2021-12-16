@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Cinema.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Cinema.Controllers
 {
@@ -136,6 +137,19 @@ namespace Cinema.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [Authorize]
+        public ActionResult Dat_ve(FormCollection form)
+        {
+            var user = System.Web.HttpContext.Current.User.Identity.GetUserName();
+            DatVe dv = new DatVe();
+            dv.UserName = user;
+            var mvid = form["Movie_ID"];
+            dv.MovieID = mvid;
+            db.DatVes.Add(dv);
+            db.SaveChanges();
+            return RedirectToAction("Index","Movies");
         }
     }
 }
