@@ -13,7 +13,7 @@ namespace Cinema.Areas.Admin.Controllers
 {
     public class MoviesAdminController : Controller
     {
-       // StringProcess strPro = new StringProcess();
+        StringProcess strPro = new StringProcess();
         private Connect db = new Connect();
 
         // GET: Admin/MoviesAdmin
@@ -41,6 +41,9 @@ namespace Cinema.Areas.Admin.Controllers
         // GET: Admin/MoviesAdmin/Create
         public ActionResult Create()
         {
+            var MVID = db.Movies.OrderByDescending(m => m.MovieID).FirstOrDefault().MovieID;
+            var newID = strPro.Genneratekey(MVID);
+            ViewBag.NewMVID = newID;
             ViewBag.IDGioChieu = new SelectList(db.Giochieus, "IDGioChieu", "ThoiGianChieu");
             return View();
         }
