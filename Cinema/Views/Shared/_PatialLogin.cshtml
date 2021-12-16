@@ -1,0 +1,9 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <li>@Html.ActionLink("Đăng xuất", "Logout", "Accounts")</li>
+}
+else
+{
+    <li>@Html.ActionLink("Đăng ký", "Register", "Accounts")</li>
+    <li>@Html.ActionLink("Đăng Nhập", "Login", "Accounts")</li>
+}

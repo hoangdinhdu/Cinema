@@ -240,6 +240,7 @@
     <Content Include="Views\HinhThucThanhToans\Edit.cshtml" />
     <Content Include="Views\HinhThucThanhToans\Index.cshtml" />
     <Content Include="Views\Accounts\Logout.cshtml" />
+    <Content Include="Views\Shared\_PatialLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
