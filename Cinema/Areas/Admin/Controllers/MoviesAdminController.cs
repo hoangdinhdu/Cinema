@@ -62,11 +62,15 @@ namespace Cinema.Areas.Admin.Controllers
         public ActionResult Create(/*[Bind(Include = "MovieID,MovieName,IDGioChieu,MovieMoney,MovieSeat,ProductImageName")]*/ Movie movie)
         {
             if (ModelState.IsValid)
-            {
+            {//lấy trên file
                 string fileName = Path.GetFileNameWithoutExtension(movie.ProductImgFile.FileName);
+                //lấy phần mở rộng
                 string extension = Path.GetExtension(movie.ProductImgFile.FileName);
+                // đổi tên
                 fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                //gán tên file bằng tên product
                 movie.ProductImageName = "/Images/" + fileName;
+                //Lưu vào trong thư mục
                 fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
                 movie.ProductImgFile.SaveAs(fileName);
                 db.Movies.Add(movie);
