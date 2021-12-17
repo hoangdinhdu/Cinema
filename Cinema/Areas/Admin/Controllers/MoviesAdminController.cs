@@ -41,9 +41,15 @@ namespace Cinema.Areas.Admin.Controllers
         // GET: Admin/MoviesAdmin/Create
         public ActionResult Create()
         {
+            if(db.Movies.OrderByDescending(m => m.MovieID).Count() == 0)
+            {
+                ViewBag.NewMVID = "Movi1";
+            }else
+            {
             var MVID = db.Movies.OrderByDescending(m => m.MovieID).FirstOrDefault().MovieID;
             var newID = strPro.Genneratekey(MVID);
             ViewBag.NewMVID = newID;
+            }
             ViewBag.IDGioChieu = new SelectList(db.Giochieus, "IDGioChieu", "ThoiGianChieu");
             return View();
         }
